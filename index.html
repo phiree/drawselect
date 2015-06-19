@@ -1,0 +1,95 @@
+<html>
+<head>
+<script src='jquery1.9.1.js'></script>
+    <script src='drawselect.js'></script>
+<style>
+div#container
+
+{
+width:500px;
+}
+#container div
+{
+
+float:left;
+  width:100px;
+height:100px;
+
+}
+#container div.selected
+{
+
+ background-color:#333;
+}
+div.draw
+{
+border:solid 1px #d6e292;
+
+
+}
+</style>
+</head>
+<body>
+<div id="container">
+<div>a</div>
+
+<div>b</div>
+<div>c</div>
+<div>d</div>
+<div>e</div>
+<div>f</div>
+<div>g</div>
+<div>h</div>
+<div>i</div>
+<div>j</div>
+<div>k</div>
+<div>l</div>
+<div>m</div>
+    <div>f</div>
+    <div>g</div>
+    <div>h</div>
+    <div>i</div>
+    <div>j</div>
+    <div>k</div>
+    <div>l</div>
+    <div>m</div>
+    <div>f</div>
+    <div>g</div>
+    <div>h</div>
+    <div>i</div>
+    <div>j</div>
+    <div>k</div>
+    <div>l</div>
+    <div>m</div>
+    <div>f</div>
+    <div>g</div>
+    <div>h</div>
+    <div>i</div>
+    <div>j</div>
+    <div>k</div>
+    <div>l</div>
+    <div>m</div>
+    <div>f</div>
+    <div>g</div>
+    <div>h</div>
+    <div>i</div>
+    <div>j</div>
+    <div>k</div>
+    <div>l</div>
+    <div>m</div>
+</div>
+
+selected:<span id="result"></span>
+</body>
+<script>
+    $("#container").DrawSelect(
+            {'mouse_up':function(result){
+                $('#result').text("");
+                for(var i=0 ; i<result.length;i++)
+                {
+                    $("#result").append($(result[i]).text()+";")
+                }
+            }}
+    );
+</script>
+</html>
