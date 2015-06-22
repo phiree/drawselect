@@ -19,11 +19,15 @@ $.fn.DrawSelect = function (options) {
         var childData = {index: c, left: left, top: top, outerHeight: outerHeight, outerWidth: outerWidth};
         childrenDataList.push(childData);
     }
+    var timeInteval = null;
     $(that).mousedown(function (e) {
         is_mouse_down = true;
+        //使用定时器来计算div重叠情况
+
+        //创建划框div
         var drawDiv = $('.draw');
         if (drawDiv.length == 0) {
-            drawDiv = $("<div class='draw' style='position:absolute'></div>");//创建划框div
+            drawDiv = $("<div class='draw' style='position:absolute'></div>");
             $(that).append(drawDiv);
         }
         lastDrawDivStartPosition.left = e.pageX;//划框的起始位置
@@ -33,23 +37,20 @@ $.fn.DrawSelect = function (options) {
             'top': lastDrawDivStartPosition.top + 'px',
             width: 0,
             height: 0
-        });//drawDiv.css(lastDrawDivStartPosition);
-        e.preventDefault();
-        ChangeSelectedStatus();
-        childrenDivs.on('mouseover', function (e) {
-            if (is_mouse_down) {
-                ChangeSelectedStatus();
-                console.log("entered");
-            }
         });
+        //阻止默认时间(选中元素,背景是蓝色)
+        e.preventDefault();
+
+        timeinteval = setInterval(ChangeSelectedStatus, 100);
 
     });
     $(that).mouseup(function (e) {
+        clearInterval(timeinteval);
         childrenDivs.removeAttr('fixed');
+        childrenDivs.removeAttr('current');
         $('.selected').attr('fixed', 'fixed')
         is_mouse_down = false;
         params.mouse_up($('.selected'));
-        childrenDivs.off("mouseover");
     });
     $(that).mousemove(function (e) {
 
@@ -94,6 +95,7 @@ $.fn.DrawSelect = function (options) {
 
 
     function ChangeSelectedStatus() {
+        console.log("change_selected_status");
         var last_draw_div = $(".draw:last");
         var draw_div_data = {
             left: last_draw_div.offset().left,
@@ -109,20 +111,33 @@ $.fn.DrawSelect = function (options) {
             var overlayed = collision($divdata, draw_div_data);
             $div = $(childrenDivs[i]);
             if (overlayed) {
+                //所有被覆盖的div都增加属性"当前"
+
+                //如果是之前选中的
 
                 if ($div.attr('fixed') == "fixed") {
-                    $div.removeClass('selected');
+
+                    if($div.hasClass('selected')) {
+                        $div.removeClass('selected');
+                    } 
                 }
 
-                else {
+                else{
                     $div.addClass('selected');
                 }
+
+
+
+
             }
             else {
+                //如果不重叠
+
                 if ($div.attr('fixed') != "fixed") {
 
                     $div.removeClass('selected');
                 }
+
             }
 
         }
