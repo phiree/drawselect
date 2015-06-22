@@ -1,3 +1,4 @@
+/* 不再使用 仅供参考.*/
 $.fn.DrawSelect = function (options) {
 
     var params = $.extend({
