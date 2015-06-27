@@ -1,34 +1,54 @@
-$.fn.DrawSelect = function (options) {
+/*
+插件名称: DrawSelect
+环境: jQuery.
+描述:
+    鼠标框选 页面元素.
+ 传入对象:
+     可以被选择的元素集合.
+ 用法:
+ 
+ $(".can_be_selected_div").DrawSelect({
+   on_select_complete:function(selected_elements){
+        for(var s in selected_elements)
+        ..........
+        .......
+   }
+ });
+  2015-6-27 
+*/
 
+$.fn.DrawSelect = function (options) {
     var params = $.extend({
-        'mouse_up': null
+        'selected_class':'selected',                //本次选中元素的样式
+        'drawer_class':'draw',                      //框的样式.
+        'interval_span':100,                          //计时器循环间隔, 单位:毫秒
+        'on_select_complete': function(){}     //框选结束(鼠标弹起)后的调用的函数,  传入已选元素的jquery对象列表$(selected_class), 供调用方使用.
     }, options);
-    var that = this;
-    var status = ['fixed', 'current'];
+    
+    var selectableDivs = this;
     var is_mouse_down = false;
     var lastDrawDivStartPosition = {left: 0, top: 0};
-    var childrenDivs = $("#container").children("div");
-    //将div相关数值放入变量, 供便利,替代直接遍历div引起的性能问题.
-    var childrenDataList = [];
-    for (var c = 0; c < childrenDivs.length; c++) {
-        var currentChild = $(childrenDivs[c]);
-        var left = currentChild.offset().left;
-        var top = currentChild.offset().top;
-        var outerHeight = currentChild.outerHeight(true);
-        var outerWidth = currentChild.outerWidth(true);
-        var childData = {index: c, left: left, top: top, outerHeight: outerHeight, outerWidth: outerWidth};
-        childrenDataList.push(childData);
+    //将div相关数值放入变量, 供遍历比较,替代直接遍历div引起的性能问题.
+    var dataList = [];
+    for (var c = 0; c < selectableDivs.length; c++) {
+        var currentDiv = $(selectableDivs[c]);
+        var left = currentDiv.offset().left;
+        var top = currentDiv.offset().top;
+        var outerHeight = currentDiv.outerHeight();
+        var outerWidth = currentDiv.outerWidth();
+        var data = {index: c, left: left, top: top, outerHeight: outerHeight, outerWidth: outerWidth};
+        dataList.push(data);
     }
+    
+    //鼠标按下,计时器开始,判断画框 和元素的重叠性
     var timeInteval = null;
-    $(that).mousedown(function (e) {
+    $(window).mousedown(function (e) {
         is_mouse_down = true;
-        //使用定时器来计算div重叠情况
-
         //创建划框div
-        var drawDiv = $('.draw');
+        var drawDiv = $("."+params.drawer_class);
         if (drawDiv.length == 0) {
-            drawDiv = $("<div class='draw' style='position:absolute'></div>");
-            $(that).append(drawDiv);
+            drawDiv = $("<div class='"+params.drawer_class+"' style='position:absolute'></div>");
+            $(document.body).append(drawDiv);
         }
         lastDrawDivStartPosition.left = e.pageX;//划框的起始位置
         lastDrawDivStartPosition.top = e.pageY;
@@ -38,24 +58,25 @@ $.fn.DrawSelect = function (options) {
             width: 0,
             height: 0
         });
-        //阻止默认时间(选中元素,背景是蓝色)
+        //阻止默认框选事件
         e.preventDefault();
-
-        timeinteval = setInterval(ChangeSelectedStatus, 100);
+        //循环比较是否被框中.
+        timeInteval = setInterval(ChangeSelectedStatus, params.interval_span);
 
     });
-    $(that).mouseup(function (e) {
-        clearInterval(timeinteval);
-        childrenDivs.removeAttr('fixed');
-        childrenDivs.removeAttr('current');
-        $('.selected').attr('fixed', 'fixed')
+    //鼠标弹起,计时器停止.
+    $(window).mouseup(function (e) {
+        clearInterval(timeInteval);
+        selectableDivs.removeAttr('fixed');
+        $('.'+params.selected_class).attr('fixed', 'fixed')
         is_mouse_down = false;
-        params.mouse_up($('.selected'));
+        //选中结束
+        params.on_select_complete($('.'+params.selected_class));
     });
-    $(that).mousemove(function (e) {
-
+    //鼠标移动,修改画框大小
+    $(window).mousemove(function (e) {
         if (is_mouse_down) {
-            var lastDrawDiv = $(".draw:last");
+            var lastDrawDiv = $('.'+params.drawer_class);
             var width = e.pageX - lastDrawDivStartPosition.left;
             var height = e.pageY - lastDrawDivStartPosition.top;
             var width_abs = Math.abs(width);
@@ -66,9 +87,9 @@ $.fn.DrawSelect = function (options) {
             if (height < 0) {
                 lastDrawDiv.css({top: e.pageY});
             }
-            lastDrawDiv.css({width: width_abs + 2 + 'px', height: height_abs + 2 + 'px'});
+            lastDrawDiv.css({width: width_abs  + 'px', height: height_abs  + 'px'});
         }
-        //e.preventDefault();
+        e.preventDefault();
     });
     //判断两个div是否重叠.
     function collision($div1, $div2) {
@@ -94,48 +115,35 @@ $.fn.DrawSelect = function (options) {
     }
 
 
+//更改 选中状态.
     function ChangeSelectedStatus() {
-        console.log("change_selected_status");
-        var last_draw_div = $(".draw:last");
+        
+        var last_draw_div = $('.'+params.drawer_class);
         var draw_div_data = {
             left: last_draw_div.offset().left,
             top: last_draw_div.offset().top,
             outerHeight: last_draw_div.outerHeight(true),
             outerWidth: last_draw_div.outerWidth(true)
         };
-
-        for (var i = 0; i < childrenDataList.length; i++) {
-
-            $divdata = childrenDataList[i];
-
+        for (var i = 0; i < dataList.length; i++) {
+            $divdata = dataList[i];
             var overlayed = collision($divdata, draw_div_data);
-            $div = $(childrenDivs[i]);
+            $div = $(selectableDivs[i]);
             if (overlayed) {
-                //所有被覆盖的div都增加属性"当前"
-
                 //如果是之前选中的
-
                 if ($div.attr('fixed') == "fixed") {
-
-                    if($div.hasClass('selected')) {
-                        $div.removeClass('selected');
+                    if($div.hasClass(params.selected_class)) {
+                        $div.removeClass(params.selected_class);
                     } 
                 }
-
                 else{
-                    $div.addClass('selected');
+                    $div.addClass(params.selected_class);
                 }
-
-
-
-
             }
             else {
                 //如果不重叠
-
                 if ($div.attr('fixed') != "fixed") {
-
-                    $div.removeClass('selected');
+                    $div.removeClass(params.selected_class);
                 }
 
             }

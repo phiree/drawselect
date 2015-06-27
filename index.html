@@ -4,23 +4,27 @@
     <script src='drawselect2.js'></script>
     <style>
         div#container {
-            width: 500px;
+            width: 600px;
         }
 
         #container div {
-
+margin:15px;
             float: left;
             width: 100px;
             height: 100px;
             border:solid 1px #76e3a7;
-
+    background-color: #dcdcdc;
         }
 
         #container div.selected {
 
-            background-color: #38f84e;
+            background-color: #35ca3f !important ;
         }
-
+    #container div.selectable{
+    background-color:#fff;
+ 
+    left:40px;
+    }
         div.draw {
             border: solid 1px blue;
 
@@ -30,58 +34,58 @@
 </head>
 <body>
 <div id="container">
-    <div>a</div>
+    <div class="selectable">a</div>
 
-    <div>b</div>
-    <div>c</div>
-    <div>d</div>
-    <div>e</div>
-    <div>f</div>
-    <div>g</div>
-    <div>h</div>
-    <div>i</div>
-    <div>j</div>
-    <div>k</div>
-    <div>l</div>
-    <div>m</div>
-    <div>f</div>
-    <div>g</div>
-    <div>h</div>
-    <div>i</div>
-    <div>j</div>
-    <div>k</div>
-    <div>l</div>
-    <div>m</div>
-    <div>f</div>
-    <div>g</div>
-    <div>h</div>
-    <div>i</div>
-    <div>j</div>
-    <div>k</div>
-    <div>l</div>
-    <div>m</div>
-    <div>f</div>
-    <div>g</div>
-    <div>h</div>
-    <div>i</div>
-    <div>j</div>
-    <div>k</div>
-    <div>l</div>
-    <div>m</div>
-    <div>f</div>
-    <div>g</div>
-    <div>h</div>
-    <div>i</div>
-    <div>j</div>
-    <div>k</div>
-    <div>l</div>
-    <div>m</div>
+    <div class=" ">b</div>
+    <div class="selectable">c</div>
+    <div class=" ">d</div>
+    <div class="selectable">e</div>
+    <div class="selectable">f</div>
+    <div class="selectable">g</div>
+    <div class="selectable">h</div>
+    <div class="selectable">i</div>
+    <div class="selectable">j</div>
+    <div class="selectable">k</div>
+    <div class="selectable">l</div>
+    <div class="selectable">m</div>
+    <div class="selectable">f</div>
+    <div class="selectable">g</div>
+    <div class="selectable">h</div>
+    <div class="selectable">i</div>
+    <div class="selectable">j</div>
+    <div class="selectable">k</div>
+    <div class="selectable">l</div>
+    <div class="selectable">m</div>
+    <div class="selectable">f</div>
+    <div class="selectable">g</div>
+    <div class="selectable">h</div>
+    <div class="selectable">i</div>
+    <div class="selectable">j</div>
+    <div class="selectable">k</div>
+    <div class="selectable">l</div>
+    <div class="selectable">m</div>
+    <div class="selectable">f</div>
+    <div class="selectable">g</div>
+    <div class="selectable">h</div>
+    <div class="selectable">i</div>
+    <div class="selectable">j</div>
+    <div class="selectable">k</div>
+    <div class="selectable">l</div>
+    <div class="selectable">m</div>
+    <div class="selectable">f</div>
+    <div class="selectable">g</div>
+    <div class="selectable">h</div>
+    <div class="selectable">i</div>
+    <div class="selectable">j</div>
+    <div class="selectable">k</div>
+    <div class="selectable">l</div>
+    <div class="selectable">m</div>
 </div>
 
 selected:<span id="result"></span>
 </body>
 <script>
-    $("#container").DrawSelect(
+    $(".selectable	").DrawSelect(
             {
                 'mouse_up': function (result) {
                     $('#result').text("");
