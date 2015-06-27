@@ -1,4 +1,4 @@
-<html>
+<html charset='utf-8'>
 <head>
     <script src='jquery1.9.1.js'></script>
     <script src='drawselect2.js'></script>
@@ -36,9 +36,9 @@ margin:15px;
 <div id="container">
     <div class="selectable">a</div>
 
-    <div class=" ">b</div>
+    <div class=" ">can't be selected</div>
     <div class="selectable">c</div>
-    <div class=" ">d</div>
+    <div class=" ">can't be selected</div>
     <div class="selectable">e</div>
     <div class="selectable">f</div>
     <div class="selectable">g</div>
@@ -87,7 +87,7 @@ selected:<span id="result"></span>
 <script>
     $(".selectable	").DrawSelect(
             {
-                'mouse_up': function (result) {
+                'on_select_complete': function (result) {
                     $('#result').text("");
                     for (var i = 0; i < result.length; i++) {
                         $("#result").append($(result[i]).text() + ";")
