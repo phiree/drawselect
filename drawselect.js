@@ -2,13 +2,14 @@
 $.fn.DrawSelect = function (options) {
 
     var params = $.extend({
-        'mouse_up': null
+        'mouse_up': null,
+        'container':'#container'
     }, options);
-    var that = this;
+    var that = $("#container");
     var status = ['fixed', 'current'];
     var is_mouse_down = false;
     var lastDrawDivStartPosition = {left: 0, top: 0};
-    var childrenDivs = $("#container").children("div");
+    var childrenDivs = that.children("div");
     //将div相关数值放入变量, 供便利,替代直接遍历div引起的性能问题.
     var childrenDataList = [];
     for (var c = 0; c < childrenDivs.length; c++) {
@@ -20,12 +21,12 @@ $.fn.DrawSelect = function (options) {
         var childData = {index: c, left: left, top: top, outerHeight: outerHeight, outerWidth: outerWidth};
         childrenDataList.push(childData);
     }
-    $(that).mousedown(function (e) {
+    $(window).mousedown(function (e) {
         is_mouse_down = true;
         var drawDiv = $('.draw');
         if (drawDiv.length == 0) {
             drawDiv = $("<div class='draw' style='position:absolute'></div>");//创建划框div
-            $(that).append(drawDiv);
+            that.append(drawDiv);
         }
         lastDrawDivStartPosition.left = e.pageX;//划框的起始位置
         lastDrawDivStartPosition.top = e.pageY;
@@ -37,7 +38,7 @@ $.fn.DrawSelect = function (options) {
         });//drawDiv.css(lastDrawDivStartPosition);
         e.preventDefault();
         ChangeSelectedStatus();
-        childrenDivs.on('mouseover', function (e) {
+        $(window).on('mouseover', function (e) {
             if (is_mouse_down) {
                 ChangeSelectedStatus();
                 console.log("entered");
@@ -45,14 +46,14 @@ $.fn.DrawSelect = function (options) {
         });
 
     });
-    $(that).mouseup(function (e) {
+    $(window).mouseup(function (e) {
         childrenDivs.removeAttr('fixed');
         $('.selected').attr('fixed', 'fixed')
         is_mouse_down = false;
         params.mouse_up($('.selected'));
-        childrenDivs.off("mouseover");
+        $(this).off("mouseover");
     });
-    $(that).mousemove(function (e) {
+    $(window).mousemove(function (e) {
 
         if (is_mouse_down) {
             var lastDrawDiv = $(".draw:last");
