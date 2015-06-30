@@ -1,0 +1,448 @@
+﻿.clear
+{
+	clear: both;
+	float: none;
+}
+.blankline
+{
+	clear: both;
+	padding-top: 14px;
+	margin: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	overflow: hidden;
+	height: 1px;
+}
+.mtbigtl
+{
+	font-size: 1.2em;
+	line-height: 1.2em;
+	background-color: #FFF;
+	text-align: center;
+	color: #108fc4;
+	clear: both;
+	padding: 6px;
+}
+.mtbigtl span
+{
+	font-size: 0.8em;
+	color: #666;
+}
+
+.mtintro
+{
+	background-color: #E5E3E4;
+	background-image: url(../images/bg_line1.jpg);
+	background-repeat: repeat-x;
+	padding: 20px 10px 10px;
+	line-height: 1.2em;
+	font-size: 1.0em;
+}
+.mtintro_li
+{
+	margin-bottom: 4px;
+}
+.mtil_tl
+{
+	float: left;
+	width: 20%;
+}
+.mtil_tlnew
+{
+	float: left;
+	width: 15%;
+}
+.myil_txt
+{
+	float: left;
+	max-width: 86%;
+	margin-left: 2%;
+	color: #666;
+}
+.mti_more
+{
+	background-image: url(../images/bu_more.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	clear: both;
+	height: 100px;
+}
+.mti_more a
+{
+	display: block;
+	font-size: 1em;
+	line-height: 100px;
+	color: #999;
+	text-decoration: none;
+	text-align: center;
+}
+
+
+
+.mtsignin
+{
+	background-image: url(../images/bg_line2.jpg);
+	background-repeat: repeat-x;
+	background-color: #C2C2C2;
+	padding-top: 40px;
+	padding-right: 20px;
+	padding-bottom: 50px;
+	padding-left: 20px;
+}
+.mtsl_add
+{
+	background-image: url(../images/bg_add.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	clear: both;
+	height: 100px;
+	font-size: 1.2em;
+	line-height: 100px;
+	padding-left: 110px;
+	margin-bottom: 20px;
+}
+.mtsl_company
+{
+	background-color: #E8E6E7;
+	font-size: 1.8em;
+	line-height: 1.8em;
+	padding: 20px;
+	clear: both;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #C2C2C2;
+}
+.mts_con
+{
+	background-color: #E8E6E7;
+	padding: 20px;
+	font-size: 1.0em;
+	line-height: 1.0em;
+}
+.mts_connew
+{
+	background-color: #E8E6E7;
+	padding: 20px;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+.mtscl_tl
+{
+	float: left;
+	width: 80px;
+}
+.mtscl_txt
+{
+	float: left;
+	max-width: 86%;
+	margin-left: 2%;
+	color: #666;
+}
+.mtsc_edit a
+{
+	background-image: url(../images/bu_edit.jpg);
+	background-repeat: no-repeat;
+	background-position: 510px;
+	clear: both;
+	height: 60px;
+	display: block;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #C2C2C2;
+	color: #999;
+	text-decoration: none;
+	font-size: 0.9em;
+	text-align: right;
+	padding-right: 60px;
+	line-height: 60px;
+}
+.mtsc_sub a
+{
+	background-image: url(../images/bu_sub.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: block;
+	clear: both; /*height: 100px;*/
+	font-size: 1.5em;
+	color: #FFF;
+	text-decoration: none; /*line-height: 100px;*/
+	padding: 15px 0;
+	text-align: center;
+	margin-bottom: 15px;
+	border-radius: 100px;
+}
+.mtjb_li
+{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #666;
+	margin-bottom: 20px;
+	clear: both;
+	padding-bottom: 20px;
+}
+.mtjb_pic
+{
+	float: left;
+	width: 45%; /*width: 200px; 	height: 267px;*/
+}
+.mtjb_pic img
+{
+	width: 100%;
+}
+.mtjb_con
+{
+	float: left;
+	width: 50%;
+	margin-left: 3%; /*width: 380px;*/
+}
+.mtjb_name
+{
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
+.mtdl_li a
+{
+	color: #333;
+	text-decoration: none;
+	display: block;
+	line-height: 80px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #666;
+	background-image: url(../images/bu_dl.jpg);
+	background-position: 95% center;
+	background-repeat: no-repeat;
+	padding-left: 20px;
+}
+.index
+{
+	background-image: url(../images/20140616mtindex.jpg);
+	background-repeat: no-repeat;
+	height: 1136px;
+}
+.defaultindex
+{
+	background-image: url(../images/201409124.png);
+	background-repeat: no-repeat;
+	height: 961px;
+}
+.indexbigtl
+{
+	font-size: 3em;
+	color: #FFF;
+	line-height: 1.5em;
+	text-align: center;
+	padding-top: 140px;
+	padding-right: 20px;
+	padding-left: 20px;
+	height: 200px;
+}
+.inn_link a
+{
+	display: block;
+	float: left;
+	width: 320px;
+	height: 280px;
+}
+.mt_qrcode
+{
+	background-color: #FFF;
+	text-align: center;
+	width: 100%;
+	padding-top: 20px;
+}
+.mt_qrcode img
+{
+	width: 50%;
+}
+.mt_cqtl
+{
+	background-color: #FFF;
+	text-align: center;
+	clear: both;
+	padding: 10px 0;
+}
+.mtsc_sub2 a
+{
+	background-image: url(../images/bu_sub2.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: block;
+	clear: both;
+	height: 100px;
+	font-size: 1.5em;
+	color: #FFF;
+	text-decoration: none;
+	line-height: 100px;
+	text-align: center;
+}
+.mt_other
+{
+	background-color: #CCC;
+	text-align: center;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+	padding: 5px 0;
+}
+.sblank
+{
+	background-color: #E5E3E4;
+	color: #E5E3E4;
+}
+.sblock
+{
+	background-color: #369;
+	color: White;
+}
+.select
+{
+	background-color: #FF0000;
+	color: Black;
+}
+.draw
+{
+    filter:alpha(Opacity=80);-moz-opacity:0.5;opacity: 0.5;
+    border:solid 1px #C9C9C9;
+    background-color:#C9C9C9;
+}
+.area
+{
+    background-color: #EEEE00;
+	color: Black;
+}
+.sblack
+{
+	background-color: Black;
+	color: #369;
+	color: White;
+}
+
+
+.mt_sli
+{
+	float: left;
+	height: 18px;
+	width: 30px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+	line-height: 14px;
+	text-align: center;
+	font-size: 0.8em;
+}
+.mt_sli1
+{
+	float: left;
+	height: 15px;
+	width: 3.8%;
+	margin-right: 0.79%;
+	margin-bottom: 3px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 0.8em;
+}
+.scurrseat
+{
+	background-color: red;
+}
+
+.smyseat
+{
+	background-color: #FC0;
+}
+.str
+{
+	font-size: 1.0em;
+	color: #E5E3E4;
+	background-color: #333;
+	line-height: 15px;
+}
+.mtsc_subnew a
+{
+	background-position: center center;
+	display: block;
+	clear: both;
+	height: 78px;
+	font-size: 1.5em;
+	color: #FFF;
+	text-decoration: none; /*line-height: 100px;*/
+	padding: 15px 0;
+	text-align: center;
+	margin-bottom: 5px;
+	border-radius: 100px;
+}
+
+.btnedit
+{
+	background-image: url(../images/bu_sub.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+	clear: both; /*height: 100px;*/
+	font-size: 1.5em;
+	color: #FFF;
+	text-decoration: none; /*line-height: 100px;*/
+	padding: 15px 0;
+	text-align: center;
+	margin-bottom: 15px;
+	border-radius: 100px;
+	width: 47%;
+	border-style: none;
+}
+
+.userinfo
+{
+	width: 100%;
+	height: 20px;
+	font-size: 15px;
+	margin-bottom: 6px;
+}
+
+.userinfonew
+{
+	width: 100%;
+	height: 20px;
+	font-size: 15px;
+	margin-bottom: 6px;
+	margin-top: 6px;
+}
+
+.mtil_tlpay
+{
+	float: left;
+	width: 35%;
+}
+
+.common-address
+{
+	list-style-type: none;
+	font-size: 1.2em;
+}
+
+.progressBar
+{
+	border: solid 2px #86A5AD;
+	background: white url(../images/loaderc.gif) no-repeat 10px 10px;
+}
+.progressBar
+{
+	display: block;
+	width: 240px;
+	height: 28px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -74px;
+	margin-top: -14px;
+	padding: 10px 10px 10px 50px;
+	text-align: left;
+	line-height: 27px;
+	font-weight: bold;
+	position: absolute;
+	z-index: 2001;
+}
+
+.mtil_tlmeet
+{
+	float: left;
+	width: 30%;
+}

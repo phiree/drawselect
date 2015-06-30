@@ -76,7 +76,6 @@ $.fn.DrawSelect = function (options) {
         selectableDivs.removeAttr('fixed');
         $('.' + params.selected_class).attr('fixed', 'fixed')
         is_mouse_down = false;
-           
         //选中结束
         params.on_select_complete($('.' + params.selected_class));
     });
