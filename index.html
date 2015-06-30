@@ -27,13 +27,12 @@ margin:15px;
     }
         div.draw {
             border: solid 1px blue;
-
-
         }
     </style>
 </head>
-<body>
+<body><input type="button"  value="click me to fire" onclick="javascript:alert('fired')"/>
 <div id="container">
+
     <div class="selectable">a</div>
 
     <div class=" ">can't be selected</div>
@@ -85,8 +84,9 @@ margin:15px;
 selected:<span id="result"></span>
 </body>
 <script>
-    $(".selectable	").DrawSelect(
+    $("#container").DrawSelect(
             {
+
                 'on_select_complete': function (result) {
                     $('#result').text("");
                     for (var i = 0; i < result.length; i++) {
