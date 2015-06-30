@@ -19,7 +19,7 @@
 
 $.fn.DrawSelect = function (options) {
     var params = $.extend({
-        'container':$(document),//包含所有需要框选元素的 容器, 默认是 document.
+
         'selectable':'selectable', //可以被选取的元素的样式名称.
         'selected_class': 'selected',                //被选中元素的样式
         'drawer_class': 'draw',                      //框的样式.
@@ -27,7 +27,7 @@ $.fn.DrawSelect = function (options) {
         'on_select_complete': function () {
         }     //框选结束(鼠标弹起)后的调用的函数,  传入已选元素的jquery对象列表$(selected_class), 供调用方使用.
     }, options);
-    var container=params.container;
+
     var selectableDivs = $('.'+params.selectable);
     var is_mouse_down = false;
     var lastDrawDivStartPosition = {left: 0, top: 0};
@@ -46,7 +46,7 @@ $.fn.DrawSelect = function (options) {
     //鼠标按下,计时器开始,判断画框 和元素的重叠性
     var timeInteval = null;
 
-    container.mousedown(function (e) {
+    this.mousedown(function (e) {
 
         is_mouse_down = true;
         //创建划框div
@@ -76,12 +76,12 @@ $.fn.DrawSelect = function (options) {
         selectableDivs.removeAttr('fixed');
         $('.' + params.selected_class).attr('fixed', 'fixed')
         is_mouse_down = false;
-          $("." + params.drawer_class).remove();
+           
         //选中结束
         params.on_select_complete($('.' + params.selected_class));
     });
     //鼠标移动,修改画框大小
-    container.mousemove(function (e) {
+    this.mousemove(function (e) {
         if (is_mouse_down) {
             var lastDrawDiv = $('.' + params.drawer_class);
             var width = e.pageX - lastDrawDivStartPosition.left;

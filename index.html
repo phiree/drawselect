@@ -84,9 +84,9 @@ margin:15px;
 selected:<span id="result"></span>
 </body>
 <script>
-    $().DrawSelect(
+    $("#container").DrawSelect(
             {
-                'container':$("#container"),
+
                 'on_select_complete': function (result) {
                     $('#result').text("");
                     for (var i = 0; i < result.length; i++) {
