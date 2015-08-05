@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=gb2312"><title>
+	座位设置
+</title><link href=" seatpc.css" rel="stylesheet" type="text/css">
+    <script src="../jquery1.9.1.js"></script>
+    <link href=" common.css" type="text/css" rel="Stylesheet"><link href="FrameWork.css" type="text/css" rel="Stylesheet"><link href=" DataList.css" type="text/css" rel="Stylesheet"><link href=" PageStyle.css" type="text/css" rel="Stylesheet">
+    <script language="javascript" type="text/javascript" src="frameJS.js"></script>
+    <script src="../drawselect2.js"></script>
+</head>
+<body>
+    <form method="post" action="MeetSeatSet.aspx?mid=48939a26-acf3-4c3e-804c-e3c8d9920674" id="form1">
+<div class="aspNetHidden">
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNTQ5OTcxMTk5D2QWAgIBD2QWAgIBDxYCHglpbm5lcmh0bWwF/As8ZGl2IGNsYXNzPSJtdF9zbGkgc3RyIj4wPC9kaXY+IA0KPGRpdiBpZD0nZGl2c2VhdDBfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDFfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDJfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDNfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDRfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDVfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDZfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDdfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDhfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBpZD0nZGl2c2VhdDlfMCcgY2xhc3M9J210X3NsaSBzYmxvY2snPjwvZGl2Pg0KPGRpdiBjbGFzcz0nY2xlYXInPjwvZGl2PjxkaXYgY2xhc3M9Im10X3NsaSBzdHIiPjE8L2Rpdj4gDQo8ZGl2IGlkPSdkaXZzZWF0MF8xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0MV8xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0Ml8xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0M18xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0NF8xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0NV8xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0Nl8xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0N18xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0OF8xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGlkPSdkaXZzZWF0OV8xJyBjbGFzcz0nbXRfc2xpIHNibG9jayc+PC9kaXY+DQo8ZGl2IGNsYXNzPSdjbGVhcic+PC9kaXY+PGRpdiAgY2xhc3M9J210X3NsaSc+PC9kaXY+DQo8ZGl2ICBjbGFzcz0nbXRfc2xpIHN0cic+MDwvZGl2Pg0KPGRpdiAgY2xhc3M9J210X3NsaSBzdHInPjE8L2Rpdj4NCjxkaXYgIGNsYXNzPSdtdF9zbGkgc3RyJz4yPC9kaXY+DQo8ZGl2ICBjbGFzcz0nbXRfc2xpIHN0cic+MzwvZGl2Pg0KPGRpdiAgY2xhc3M9J210X3NsaSBzdHInPjQ8L2Rpdj4NCjxkaXYgIGNsYXNzPSdtdF9zbGkgc3RyJz41PC9kaXY+DQo8ZGl2ICBjbGFzcz0nbXRfc2xpIHN0cic+NjwvZGl2Pg0KPGRpdiAgY2xhc3M9J210X3NsaSBzdHInPjc8L2Rpdj4NCjxkaXYgIGNsYXNzPSdtdF9zbGkgc3RyJz44PC9kaXY+DQo8ZGl2ICBjbGFzcz0nbXRfc2xpIHN0cic+OTwvZGl2Pg0KPGRpdiBjbGFzcz0nY2xlYXInPjwvZGl2PmRk7CPi0g4dLphD9lJUu95ND20NgzLEXsY8v6xHn64L3eo=" type="hidden">
+</div>
+
+<div class="aspNetHidden">
+
+	<input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D0D5AAA1" type="hidden">
+</div>
+    <div id="tabs" class="wrap">
+        <div class="md-head" id="blogs_spacerank">
+            <a class="a10 wrap " id="blogs_spacerank_tab_0" hidefocus="" onclick="blogs_spacerank_ck(0);return false;" href="javascript:;">排座位</a>
+            <a class="a10 wrap  cur wid" id="blogs_spacerank_tab_1" hidefocus="" onclick="blogs_spacerank_ck(1);return false;" href="javascript:;">初始化</a>
+        </div>
+        <div class="md-body">
+        <div style="display: none;" id="blogs_spacerank_0">
+        </div>
+        <div id="blogs_spacerank_1" style="display: block;">
+            <div class="ciline">
+                <div class="cilr">
+                    会场位置
+                </div>
+                <div class="cilr">
+                    横排<input id="tbSeatX" style="width:50px" type="text">
+                    竖排<input id="tbSeatY" style="width:50px" type="text">
+                </div>
+                <div class="cilr">
+                    <input id="btnSave" value="保存" type="button">
+                </div>
+                <div class="cilr">
+                    <input id="btnClear" value="座位清除" type="button">
+                </div>
+                <div class="cilr">
+                    <input id="btnAdd" value="座位还原" type="button">
+                </div>
+                <div class="cilr">
+                    <input id="btnMerge" value="座位设置" type="button">
+                </div>
+                <div class="cilr">
+                    <input id="btnAreaRestore" value="取消座位设置" type="button">
+                </div>
+                selected:<span id="result"></span>
+            </div>
+            <div class="mtintro">
+                <div class="mt_other">
+                    主席台</div>
+                <div id="divseat" class="mtseats"><div class="mt_sli str">0</div> 
+<div id="divseat0_0" class="mt_sli 	"></div>
+<div id="divseat1_0" class="mt_sli sblock"></div>
+<div id="divseat2_0" class="mt_sli sblock"></div>
+<div id="divseat3_0" class="mt_sli sblock"></div>
+<div id="divseat4_0" class="mt_sli sblock"></div>
+<div id="divseat5_0" class="mt_sli sblock"></div>
+<div id="divseat6_0" class="mt_sli sblock"></div>
+<div id="divseat7_0" class="mt_sli sblock"></div>
+<div id="divseat8_0" class="mt_sli sblock"></div>
+<div id="divseat9_0" class="mt_sli sblock"></div>
+<div class="clear"></div><div class="mt_sli str">1</div> 
+<div id="divseat0_1" class="mt_sli sblock"></div>
+<div id="divseat1_1" class="mt_sli sblock"></div>
+<div id="divseat2_1" class="mt_sli sblock"></div>
+<div id="divseat3_1" class="mt_sli sblock"></div>
+<div id="divseat4_1" class="mt_sli sblock"></div>
+<div id="divseat5_1" class="mt_sli sblock"></div>
+<div id="divseat6_1" class="mt_sli sblock"></div>
+<div id="divseat7_1" class="mt_sli sblock"></div>
+<div id="divseat8_1" class="mt_sli sblock"></div>
+<div id="divseat9_1" class="mt_sli sblock"></div>
+<div class="clear"></div><div class="mt_sli"></div>
+<div class="mt_sli str">0</div>
+<div class="mt_sli str">1</div>
+<div class="mt_sli str">2</div>
+<div class="mt_sli str">3</div>
+<div class="mt_sli str">4</div>
+<div class="mt_sli str">5</div>
+<div class="mt_sli str">6</div>
+<div class="mt_sli str">7</div>
+<div class="mt_sli str">8</div>
+<div class="mt_sli str">9</div>
+<div class="clear"></div></div>
+            </div>
+            <div id="tzbox" style="position: absolute; width: 100%; top: 100px; left: 0px; display: none">
+            <div class="ciline" style="position: absolute; border: 3px solid #AAAAAA; width: 500px;
+                height: auto; background-color: #DDDDDD; left: 50%; top: 50%; margin-left: -250px;
+                margin-top: 50px;">
+                <div class="ciline" style="margin-left: 0px; margin-bottom: 10px; border-bottom: 1px solid #666666;">
+                    <div id="atitle" class="cilr" style="float: left;">座位设置
+                    </div>
+                    <div class="cilr" style="float: right; cursor: pointer;" onclick="hiddentz()">
+                        关闭</div>
+                </div>
+                <div id="cardtable" style="text-align: center">
+                    <div class="ciline">
+                        <div class="cill">
+                            所属区域名称：
+                        </div>
+                        <div class="cilr">
+                            <input id="txtbName" type="text">
+                        </div>
+                    </div>
+                    <div class="ciline">
+                        <div class="cill">
+                            &nbsp;
+                        </div>
+                        <div class="cilr">
+                            <input id="Button2" value="确定" onclick="Submit()" type="button">
+                            <input id="Button4" value="取消" onclick="hiddentz()" type="button">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </form>
+
+
+<script>
+    var tab;
+    var mid = "48939a26-acf3-4c3e-804c-e3c8d9920674";
+    $(function () {
+        
+        SeatInfo(true);
+    });
+
+    $("#tabs li").bind("click", function () {
+        if (tab == 1) {
+            alert("请先初始化座位信息");
+            $('#tabs').tabs('option', 'active', tab);
+        }
+    });
+
+    function SeatInfo(a) {
+        $.get("../ajax/GetSeatInfo.ashx?mid=" + mid, function (e) {
+            if (e != "") {
+                $("#tbSeatX").val(e.split('|')[0]);
+                $("#tbSeatY").val(e.split('|')[1]);
+                tab = e.split('|')[2];
+                if (a) {
+                    
+                }
+                //                if (e.split('|')[0] != 0) {
+                //                    var width = (($(document).width() - 89) / (e.split('|')[0] * 1 + 1)) - 3;
+                //                    $('head').append("<style>.mt_sli{ width:" + width + "px}</style>");
+                //                    var height = (($(document).height() - 170) / (e.split('|')[1] * 1 + 1)) - 4;
+                //                    $('head').append("<style>.mt_sli{ height:" + height + "px;line-height:" + height + "px;}</style>");
+                //                }
+                Seatinit();
+                SeatBlock();
+            }
+        });
+    }
+
+    function Seatinit() {
+        $.get("../ajax/MeetingSeatBlankGet.ashx?mid=" + mid, function (e) {
+            if (e != "") {
+                var ss = e.split(',');
+                for (i = 0; i < ss.length; i++) {
+                    if (ss[i] != "") {
+                        if (document.getElementById("divseat" + ss[i]) != null) {
+                            document.getElementById("divseat" + ss[i]).className = "mt_sli";
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    function SeatBlock() {
+        $.get("../ajax/MeetingSeatBlockGet.ashx?mid=" + mid, function (e) {
+            if (e != "") {
+                var ss = e.split('|');
+                $.each(ss, function (n, value) {
+                    var tt = value.split('+');
+                    var bid = tt[0];
+                    var bname = tt[1];
+                    var xx = tt[2].split(',');
+                    $.each(xx, function (m, val) {
+                        $("#divseat" + val).text(bname);
+                        $("#divseat" + val).attr("name", bid);
+                    });
+                });
+            }
+        });
+    }
+
+    $("#btnSave").click(function () {
+        $.post("../ajax/UpdateSeatXY.ashx", {
+            mid: mid,
+            SeatX: $("#tbSeatX").val(),
+            SeatY: $("#tbSeatY").val()
+        }, function (data) {
+            alert(data);
+            SeatInfo(false);
+        });
+    })
+
+    var selectseat = [];
+    var selectbid = [];
+    var selectemp = [];
+    function seatSet(seatstr) {
+        if ($.inArray(seatstr, selectseat) == -1) {
+            if ($("#divseat" + seatstr).attr("class") == "mt_sli") {
+                selectemp.push(seatstr);
+            }
+            if ($("#divseat" + seatstr).attr("name") != "") {
+                if ($.inArray($("#divseat" + seatstr).attr("name"), selectbid) == -1) {
+                    selectbid.push($("#divseat" + seatstr).attr("name"));
+                    $("div[name='" + $("#divseat" + seatstr).attr("name") + "']").attr("class", "mt_sli area");
+                }
+            }
+            selectseat.push(seatstr);
+            document.getElementById("divseat" + seatstr).className = "mt_sli select";
+        }
+        else {
+            if ($.inArray(seatstr, selectemp) == -1) {
+                document.getElementById("divseat" + seatstr).className = "mt_sli sblock";
+            }
+            else {
+                document.getElementById("divseat" + seatstr).className = "mt_sli";
+            }
+            $("div[name='" + $("#divseat" + seatstr).attr("name") + "']").attr("class", "mt_sli sblock");
+            if ($.inArray($("#divseat" + seatstr).attr("name"), selectbid) != -1) {
+                selectbid.splice($.inArray($("#divseat" + seatstr).attr("name"), selectbid), 1);
+            }
+            selectseat.splice($.inArray(seatstr, selectseat), 1);
+            if ($.inArray(seatstr, selectemp) != -1) {
+                selectemp.splice($.inArray(seatstr, selectemp), 1);
+            }
+            $("#divseat" + seatstr).removeAttr("fixed");
+        }
+    }
+
+    $("#btnClear").click(function () {
+        if (selectseat.length == 0) {
+            alert("请先选择要清除的座位");
+            return false;
+        }
+        var rr = false;
+        $.each(selectseat, function (m, val) {
+            if ($("#divseat" + val).text() != "") {
+                rr = true;
+            }
+        });
+        if (!rr) {
+            $.each(selectseat, function (n, value) {
+                $.post("../ajax/MeetingSeatBlankSet.ashx", {
+                    mid: mid,
+                    seatinfo: value,
+                    type: 1
+                }, function (e) {
+                    document.getElementById("divseat" + value).className = e;
+                }
+                )
+            });
+            selectseat = [];
+            selectemp = [];
+            selectbid = [];
+        }
+        else {
+            alert("已设置的座位不能清除");
+        }
+    })
+
+    $("#btnAdd").click(function () {
+        if (selectseat.length == 0) {
+            alert("请先选择要还原的座位");
+            return false;
+        }
+        $.each(selectseat, function (n, value) {
+            $.post("../ajax/MeetingSeatBlankSet.ashx", {
+                mid: mid,
+                seatinfo: value,
+                type: 0
+            }, function (e) {
+                document.getElementById("divseat" + value).className = e;
+            }
+                )
+        });
+        selectseat = [];
+        selectemp = [];
+        selectbid = [];
+    })
+
+    $("#btnMerge").click(function () {
+        if (selectseat.length == 0) {
+            alert("请先选择要设置的座位");
+            return false;
+        }
+        var rr = false;
+        if (selectemp.length > 0) {
+            rr = true;
+        }
+        if (!rr) {
+            $("#tzbox").show();
+        }
+        else {
+            alert("已清除的座位不能进行设置");
+        }
+    })
+
+    function hiddentz() {
+        $("#tzbox").hide();
+        $("#txtbName").val("");
+    }
+
+    function Submit() {
+        var bName = $("#txtbName").val();
+        $.post("../ajax/SeatBlockSet.ashx", {
+            bid: selectbid.join(','),
+            mid: mid,
+            bName: bName,
+            SeatBlock: selectseat.join(',')
+        }, function (e) {
+            $.each(selectseat, function (n, value) {
+                document.getElementById("divseat" + value).className = e;
+            });
+            SeatBlock();
+            selectseat = [];
+            selectemp = [];
+            selectbid = [];
+        }
+        )
+        $("#tzbox").hide();
+        $("#txtbName").val("");
+    }
+
+    $("#btnAreaRestore").click(function () {
+        if (selectseat.length == 0) {
+            alert("请先选择要取消设置的座位");
+            return false;
+        }
+        $.post("../ajax/SeatBlockClear.ashx", {
+            bid: selectbid.join(','),
+            SeatBlock: selectseat.join(',')
+        }, function (e) {
+            $.each(selectseat, function (n, value) {
+                if ($.inArray(value, selectemp) == -1) {
+                    document.getElementById("divseat" + value).className = e;
+                }
+                else {
+                    document.getElementById("divseat" + value).className = "mt_sli";
+                }
+                $("#divseat" + value).text("");
+                $("#divseat" + value).removeAttr("name");
+            });
+            selectseat = [];
+            selectemp = [];
+            selectbid = [];
+        }
+            )
+    })
+
+    $("#divseat").DrawSelect(
+                {
+                'selectable':'sblock',
+                 'on_select_complete': function (result) {
+                 for(var i in result){
+                    $("#result").result+=i;
+                    }
+                }
+                }
+    );
+
+    var blogs_spacerank_index = 0, blogs_spacerank_class = 'a10 wrap ';
+    var blogs_spacerank_list = document.getElementById('blogs_spacerank').getElementsByTagName('a');
+    function blogs_spacerank_ck(_idx) {
+        blogs_spacerank_list[blogs_spacerank_index].className = blogs_spacerank_class;
+        blogs_spacerank_list[_idx].className = blogs_spacerank_class + ' cur wid';
+        document.getElementById('blogs_spacerank_' + blogs_spacerank_index).style.display = 'none';
+        document.getElementById('blogs_spacerank_' + _idx).style.display = 'block';
+        blogs_spacerank_index = _idx;
+    }
+</script>
+</body></html>
