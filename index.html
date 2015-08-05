@@ -5,6 +5,7 @@
     <style>
         div#container {
             width: 600px;
+            float:left;
         }
 
         #container div {
@@ -27,14 +28,13 @@ margin:15px;
     }
         div.draw {
             border: solid 1px blue;
-
-
+            background-color:rgba(9,9,9,0.4);
         }
     </style>
 </head>
-<body>
-<input type="button" id="btn_fire" value="fire click event"/>
+<body><input type="button"  value="click me to fire" onclick="javascript:alert('fired')"/>
 <div id="container">
+
     <div class="selectable">a</div>
 
     <div class=" ">can't be selected</div>
@@ -86,8 +86,9 @@ margin:15px;
 selected:<span id="result"></span>
 </body>
 <script>
-    $(".selectable").DrawSelect(
+    $("#container").DrawSelect(
             {
+
                 'on_select_complete': function (result) {
                     $('#result').text("");
                     for (var i = 0; i < result.length; i++) {
@@ -95,11 +96,6 @@ selected:<span id="result"></span>
                     }
                 }
             }
-    );
-    //测试其他元素的点击事件是否正常
-    $("#btn_fire").on('click',function(){
-    alert('fired');
-    }
     );
 </script>
 </html>
