@@ -46,8 +46,8 @@ $.fn.DrawSelect = function (options) {
     //鼠标按下,计时器开始,判断画框 和元素的重叠性
     var timeInteval = null;
 
-    this.mousedown(function (e) {
-
+    $(this).mousedown(function (e) {
+		console.log("mousedown")
         is_mouse_down = true;
         //创建划框div
         var drawDiv = $("." + params.drawer_class);
@@ -61,7 +61,8 @@ $.fn.DrawSelect = function (options) {
             'left': lastDrawDivStartPosition.left + 'px',
             'top': lastDrawDivStartPosition.top + 'px',
             width: 0,
-            height: 0
+            height: 0,
+           // "z-index":-99
         });
         //阻止默认框选事件
         e.preventDefault();
@@ -76,12 +77,15 @@ $.fn.DrawSelect = function (options) {
         selectableDivs.removeAttr('fixed');
         $('.' + params.selected_class).attr('fixed', 'fixed')
         is_mouse_down = false;
+          $("." + params.drawer_class).remove();
         //选中结束
         $("."+params.drawer_class ).css({height:0,width:0});
         params.on_select_complete($('.' + params.selected_class));
     });
     //鼠标移动,修改画框大小
-    this.mousemove(function (e) {
+     
+    $(document).on("mousemove",this,function (e) {
+    console.log("mouse move");
         if (is_mouse_down) {
             var lastDrawDiv = $('.' + params.drawer_class);
             var width = e.pageX - lastDrawDivStartPosition.left;
