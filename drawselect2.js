@@ -7,7 +7,7 @@
  可以被选择的元素集合.
  用法:
 
- $(".can_be_selected_div").DrawSelect({
+ $("#container_that_include_all_selectable_divs").DrawSelect({
  on_select_complete:function(selected_elements){
  for(var s in selected_elements)
  ..........
