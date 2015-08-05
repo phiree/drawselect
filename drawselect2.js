@@ -19,6 +19,7 @@
 
 $.fn.DrawSelect = function (options) {
     var params = $.extend({
+		 
         'selected_class':'selected',                //本次选中元素的样式
         'drawer_class':'draw',                      //框的样式.
         'interval_span':100,                          //计时器循环间隔, 单位:毫秒
@@ -42,6 +43,7 @@ $.fn.DrawSelect = function (options) {
     
     //鼠标按下,计时器开始,判断画框 和元素的重叠性
     var timeInteval = null;
+     
     $(window).mousedown(function (e) {
         is_mouse_down = true;
         //创建划框div
@@ -56,13 +58,14 @@ $.fn.DrawSelect = function (options) {
             'left': lastDrawDivStartPosition.left + 'px',
             'top': lastDrawDivStartPosition.top + 'px',
             width: 0,
-            height: 0
+            height: 0,
+            //"z-index":-999
         });
         //阻止默认框选事件
-        e.preventDefault();
+        //e.preventDefault();
         //循环比较是否被框中.
         timeInteval = setInterval(ChangeSelectedStatus, params.interval_span);
-
+		return true;
     });
     //鼠标弹起,计时器停止.
     $(window).mouseup(function (e) {

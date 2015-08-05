@@ -33,6 +33,7 @@ margin:15px;
     </style>
 </head>
 <body>
+<input type="button" id="btn_fire" value="fire click event"/>
 <div id="container">
     <div class="selectable">a</div>
 
@@ -85,7 +86,7 @@ margin:15px;
 selected:<span id="result"></span>
 </body>
 <script>
-    $(".selectable	").DrawSelect(
+    $(".selectable").DrawSelect(
             {
                 'on_select_complete': function (result) {
                     $('#result').text("");
@@ -94,6 +95,11 @@ selected:<span id="result"></span>
                     }
                 }
             }
+    );
+    //测试其他元素的点击事件是否正常
+    $("#btn_fire").on('click',function(){
+    alert('fired');
+    }
     );
 </script>
 </html>
