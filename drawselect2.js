@@ -52,7 +52,7 @@ $.fn.DrawSelect = function (options) {
         //创建划框div
         var drawDiv = $("." + params.drawer_class);
         if (drawDiv.length == 0) {
-            drawDiv = $("<div class='" + params.drawer_class + "' style='position:absolute'></div>");
+            drawDiv = $("<div class='" + params.drawer_class + "' style='position:absolute;'></div>");
             $(document.body).append(drawDiv);
         }
         lastDrawDivStartPosition.left = e.pageX;//划框的起始位置
@@ -79,6 +79,7 @@ $.fn.DrawSelect = function (options) {
         is_mouse_down = false;
           $("." + params.drawer_class).remove();
         //选中结束
+        $("."+params.drawer_class ).css({height:0,width:0});
         params.on_select_complete($('.' + params.selected_class));
     });
     //鼠标移动,修改画框大小
